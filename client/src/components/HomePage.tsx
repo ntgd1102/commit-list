@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { PageHeader, Input, Button, Form, Descriptions } from 'antd';
-import './HomePage.css';
+import './HomePage.scss';
 import { useNavigate } from 'react-router-dom';
 import 'antd/dist/antd.css';
 

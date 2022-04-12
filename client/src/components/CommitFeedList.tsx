@@ -51,7 +51,6 @@ export const CommitFeedList: React.FC = () => {
         params.append('per_page', '10');
         params.append('page', `${pageNumber}`);
         axios.get(`https://api.github.com/repos/${userName}/${repoName}/commits`, {
-            headers: { Authorization: `Bearer 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` },
             params
         })
             .then(res => {
@@ -71,6 +70,8 @@ export const CommitFeedList: React.FC = () => {
                 setCommits(oldCommits => [...oldCommits, ...commitArray])
             })
             .catch(error => {
+                const sdsd = error;
+                console.log(error);
                 navigate(`/does/not/exist`);
             })
     }, [userName, repoName]);
