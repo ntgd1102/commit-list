@@ -10,9 +10,9 @@ ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
           <Routes>
-              <Route path="/" element={<App />} />
+              <Route path='/' element={<App />} />
               <Route path=':userName/:repoName' element={<CommitFeedList />} />
-              <Route path='*' element={
+              <Route path='/does/not/exist' element={
                   <main style={{ display: 'flex', justifyContent: 'center', fontSize: '35px', alignItems: 'center', height: '100vh'}}>
                       <strong >The Repo doesn't exist</strong>
                   </main>
