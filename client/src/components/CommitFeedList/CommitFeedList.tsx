@@ -4,7 +4,7 @@ import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Table } from 'antd';
 
-import '../App.css';
+import './CommitFeedList.scss'
 import 'antd/dist/antd.css';
 
 interface Commit {
@@ -40,8 +40,8 @@ const columns = [
 ];
 
 export const CommitFeedList: React.FC = () => {
-    const { userName, repoName } = useParams();
     const navigate = useNavigate();
+    const { userName, repoName } = useParams();
     const [commits, setCommits] = useState<Commit[]>([]);
     const [hasMore, setHasMore] = useState<boolean>(true);
     const [pageNumber, setPageNumber] = useState<number>(1)
@@ -77,9 +77,9 @@ export const CommitFeedList: React.FC = () => {
     }, [userName, repoName]);
 
     return (
-        <div className="App" style={{ height: '100vh' }}>
-            <h1 style={{ height: '50px', overflow: "auto" }} >Commit Feed Table</h1>
-            <div id="scrollableDiv" style={{ height: '90%', overflow: "auto" }}>
+        <div className='container'>
+            <h1>Commit Feed Table</h1>
+            <div id="scrollableDiv" className='infinite-scrollable-div'>
                 <InfiniteScroll
                     dataLength={commits.length}
                     next={fetchMoreData}
@@ -98,5 +98,7 @@ export const CommitFeedList: React.FC = () => {
         </div>
     );
 };
+
+export default CommitFeedList;
 
 

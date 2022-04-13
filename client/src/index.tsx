@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {CommitFeedList} from "./components/CommitFeedList";
+import CommitFeedList from "./components/CommitFeedList";
+import NotExistPage from "./components/NotExistPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,11 +13,7 @@ ReactDOM.render(
           <Routes>
               <Route path='/' element={<App />} />
               <Route path=':userName/:repoName' element={<CommitFeedList />} />
-              <Route path='/does/not/exist' element={
-                  <main style={{ display: 'flex', justifyContent: 'center', fontSize: '35px', alignItems: 'center', height: '100vh'}}>
-                      <strong >The Repo doesn't exist</strong>
-                  </main>
-              } />
+              <Route path='/does/not/exist' element={<NotExistPage />}/>
           </Routes>
       </BrowserRouter>
   </React.StrictMode>,
