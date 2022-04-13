@@ -26,9 +26,7 @@ export const HomePage: React.FC = () => {
                 form={form}
                 onFinish={onFinish}
                 layout='horizontal'
-                style={{
-                    padding: '26px'
-                }}
+                className='input-form'
             >
                 <Form.Item label='User Name' name='userName'>
                     <Input placeholder='m3db' />
