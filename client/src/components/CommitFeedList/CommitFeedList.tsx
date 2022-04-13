@@ -51,6 +51,7 @@ export const CommitFeedList: React.FC = () => {
         params.append('per_page', '10');
         params.append('page', `${pageNumber}`);
         axios.get(`https://api.github.com/repos/${userName}/${repoName}/commits`, {
+            headers: { Authorization: `Bearer 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` },
             params
         })
             .then(res => {
